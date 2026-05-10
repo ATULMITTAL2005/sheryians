@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ScaleX - Insights & Blogs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <!-- Header -->
+    <header class="topbar">
+      <div class="header-content">
+        <div class="logo">ScaleX</div>
+        <nav class="nav" aria-label="Primary">
+          <a href="#home">Home</a>
+          <a href="#about">About Us</a>
+          <a href="#blogs">Blogs</a>
+          <a href="#contact">Contact Us</a>
+        </nav>
+        <a href="#cta" class="cta-button">Get Started</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="hero-content">
+          <h1 class="hero-title">Insights &amp; Blogs</h1>
+          
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="tech">Tech</button>
+            <button class="filter-btn" data-filter="saas">SaaS</button>
+            <button class="filter-btn" data-filter="marketing">Marketing</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Blog Cards Grid -->
+      <section class="blogs-grid" id="blogs">
+        <!-- Card 1 -->
+        <article class="blog-card" data-category="tech">
+          <div class="card-image-wrap">
+            <img src="https://images.unsplash.com/photo-1536458122854-e11f3f1ff521?auto=format&fit=crop&w=600&q=80" alt="Tech beverage setup" />
+          </div>
+          <div class="card-content">
+            <span class="category-tag tech">Tech</span>
+            <h2>The Ultimate Guide To SaaS Marketing</h2>
+            <p class="card-description">Discover strategies and tactics to scale your SaaS business growth</p>
+            <div class="card-meta">
+              <span class="date">May 23, 2025</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="blog-card" data-category="saas">
+          <div class="card-image-wrap">
+            <img src="https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=600&q=80" alt="Modern chair design" />
+          </div>
+          <div class="card-content">
+            <span class="category-tag saas">SaaS</span>
+            <h2>5 Key Trends In SaaS Growth For 2025</h2>
+            <p class="card-description">Explore emerging trends that will shape the SaaS landscape</p>
+            <div class="card-meta">
+              <span class="date">May 23, 2025</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="blog-card" data-category="marketing">
+          <div class="card-image-wrap">
+            <img src="https://images.unsplash.com/photo-1533241749402-a0bf1d18ce42?auto=format&fit=crop&w=600&q=80" alt="Cat looking up" />
+          </div>
+          <div class="card-content">
+            <span class="category-tag marketing">Marketing</span>
+            <h2>How Data-Driven Strategies Are Important</h2>
+            <p class="card-description">Leverage data analytics to drive marketing success and ROI</p>
+            <div class="card-meta">
+              <span class="date">May 23, 2025</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="blog-card" data-category="tech">
+          <div class="card-image-wrap">
+            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80" alt="Tech workspace" />
+          </div>
+          <div class="card-content">
+            <span class="category-tag tech">Tech</span>
+            <h2>Cloud Infrastructure Best Practices</h2>
+            <p class="card-description">Optimize your cloud deployment for performance and cost</p>
+            <div class="card-meta">
+              <span class="date">May 22, 2025</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="blog-card" data-category="saas">
+          <div class="card-image-wrap">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80" alt="Team collaboration" />
+          </div>
+          <div class="card-content">
+            <span class="category-tag saas">SaaS</span>
+            <h2>Building Scalable SaaS Products</h2>
+            <p class="card-description">Design and build products that scale with your user base</p>
+            <div class="card-meta">
+              <span class="date">May 22, 2025</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="blog-card" data-category="marketing">
+          <div class="card-image-wrap">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80" alt="Marketing analytics" />
+          </div>
+          <div class="card-content">
+            <span class="category-tag marketing">Marketing</span>
+            <h2>Mastering Content Marketing Strategy</h2>
+            <p class="card-description">Create compelling content that resonates with your audience</p>
+            <div class="card-meta">
+              <span class="date">May 21, 2025</span>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>ScaleX</h3>
+          <p>Your partner in growth and success</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#blogs">Blogs</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <ul>
+            <li><a href="#twitter">Twitter</a></li>
+            <li><a href="#linkedin">LinkedIn</a></li>
+            <li><a href="#instagram">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 ScaleX. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Filter functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const blogCards = document.querySelectorAll('.blog-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Update active button
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Filter cards
+        const filter = btn.getAttribute('data-filter');
+        blogCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'block';
+            setTimeout(() => card.style.opacity = '1', 10);
+          } else {
+            card.style.opacity = '0';
+            setTimeout(() => card.style.display = 'none', 300);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
