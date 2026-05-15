@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLAR SYSTEM - Explore the Universe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+</head>
+<body>
+    <!-- Starfield Background -->
+    <div class="starfield"></div>
+    <div class="gradient-overlay"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-planet"></i>
+                <span>ASTRAL</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#planets">EXPLORE</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#mission">MISSION</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+            <button class="cta-btn nav-cta">SIGN IN</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="floating-planets">
+            <div class="float-planet planet-small" style="left: 5%; top: 15%; width: 80px; height: 80px; background: radial-gradient(circle at 30% 30%, #ff6b6b, #c92a2a); animation-delay: 0s;"></div>
+            <div class="float-planet planet-small" style="right: 8%; top: 40%; width: 60px; height: 60px; background: radial-gradient(circle at 30% 30%, #4dabf7, #1971c2); animation-delay: 2s;"></div>
+            <div class="float-planet planet-small" style="left: 12%; bottom: 20%; width: 100px; height: 100px; background: radial-gradient(circle at 30% 30%, #ffd43b, #f59f00); animation-delay: 4s;"></div>
+            <div class="float-planet planet-small" style="right: 5%; bottom: 30%; width: 70px; height: 70px; background: radial-gradient(circle at 30% 30%, #b197fc, #7950f2); animation-delay: 3s;"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">EARTH</h1>
+                <p class="hero-subtitle">Discover the Wonders of Our Solar System</p>
+                <p class="hero-description">Embark on an interstellar journey through eight magnificent planets orbiting our sun. Experience the cosmos like never before.</p>
+                <button class="cta-btn hero-cta">EXPLORE NOW</button>
+            </div>
+
+            <div class="hero-planet-container">
+                <div class="planet-display" id="planetDisplay">
+                    <div class="planet-glow"></div>
+                    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Earth_seen_from_Apollo_17.jpg?width=1200" alt="Earth" class="planet-image" id="planetImage">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Planet Showcase -->
+    <section class="planet-showcase" id="planets">
+        <h2 class="section-title">SELECT A PLANET</h2>
+        
+        <div class="planets-grid">
+            <div class="planet-card" data-planet="mercury" data-color="#ff6b6b" data-desc="Mercury, the smallest planet, orbits closest to the sun with extreme temperatures.">
+                <div class="planet-card-visual">
+                    <div class="planet-card-glow"></div>
+                    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mercury_in_true_color.jpg?width=500" alt="Mercury">
+                </div>
+                <h3>MERCURY</h3>
+                <p>57.9M km</p>
+            </div>
+
+            <div class="planet-card" data-planet="venus" data-color="#ffa94d" data-desc="Venus, Earth's sister, is the hottest planet with a toxic atmosphere and retrograde rotation.">
+                <div class="planet-card-visual">
+                    <div class="planet-card-glow"></div>
+                    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Venus_globe.jpg?width=500" alt="Venus">
+                </div>
+                <h3>VENUS</h3>
+                <p>108.2M km</p>
+            </div>
+
+            <div class="planet-card active" data-planet="earth" data-color="#4dabf7" data-desc="Earth, our home, is the only known planet supporting diverse life forms and liquid water.">
+                <div class="planet-card-visual">
+                    <div class="planet-card-glow"></div>
+                    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Earth_seen_from_Apollo_17.jpg?width=500" alt="Earth">
+                </div>
+                <h3>EARTH</h3>
+                <p>149.6M km</p>
+            </div>
+
+            <div class="planet-card" data-planet="mars" data-color="#fa5252" data-desc="Mars, the red planet, holds secrets of ancient water and potential for future exploration.">
+                <div class="planet-card-visual">
+                    <div class="planet-card-glow"></div>
+                    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/OSIRIS_Mars_true_color.jpg?width=500" alt="Mars">
+                </div>
+                <h3>MARS</h3>
+                <p>227.9M km</p>
+            </div>
+
+            <div class="planet-card" data-planet="jupiter" data-color="#a78bfa" data-desc="Jupiter, the gas giant, dominates our solar system with its massive size and great red spot.">
+                <div class="planet-card-visual">
+                    <div class="planet-card-glow"></div>
+                    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jupiter.jpg?width=500" alt="Jupiter">
+                </div>
+                <h3>JUPITER</h3>
+                <p>778.5M km</p>
+            </div>
+
+            <div class="planet-card" data-planet="saturn" data-color="#ffd43b" data-desc="Saturn, adorned with stunning rings, is a gas giant of immense beauty and mystery.">
+                <div class="planet-card-visual">
+                    <div class="planet-card-glow"></div>
+                    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Saturn_during_Equinox.jpg?width=500" alt="Saturn">
+                </div>
+                <h3>SATURN</h3>
+                <p>1.4B km</p>
+            </div>
+
+            <div class="planet-card" data-planet="uranus" data-color="#74c0fc" data-desc="Uranus, the ice giant, rotates on its side with a pale blue-green atmosphere.">
+                <div class="planet-card-visual">
+                    <div class="planet-card-glow"></div>
+                    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Uranus2.jpg?width=500" alt="Uranus">
+                </div>
+                <h3>URANUS</h3>
+                <p>2.9B km</p>
+            </div>
+
+            <div class="planet-card" data-planet="neptune" data-color="#4dabf7" data-desc="Neptune, the windy world, is the most distant planet with supersonic storms.">
+                <div class="planet-card-visual">
+                    <div class="planet-card-glow"></div>
+                    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Neptune_Full.jpg?width=500" alt="Neptune">
+                </div>
+                <h3>NEPTUNE</h3>
+                <p>4.5B km</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planet Details Section -->
+    <section class="planet-details" id="planetDetails">
+        <div class="details-container">
+            <div class="details-image">
+                <div class="details-planet-glow" id="detailsGlow"></div>
+                <img id="detailsImage" src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Earth_seen_from_Apollo_17.jpg?width=1200" alt="Planet">
+            </div>
+            <div class="details-text">
+                <h2 id="detailsTitle">EARTH</h2>
+                <p id="detailsDescription">Earth, our home, is the only known planet supporting diverse life forms and liquid water.</p>
+                <div class="details-stats">
+                    <div class="stat">
+                        <span class="stat-label">Diameter</span>
+                        <span class="stat-value" id="statDiameter">12,742 km</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Moons</span>
+                        <span class="stat-value" id="statMoons">1</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Gravity</span>
+                        <span class="stat-value" id="statGravity">9.8 m/s²</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Orbit Period</span>
+                        <span class="stat-value" id="statOrbit">365.25 days</span>
+                    </div>
+                </div>
+                <button class="cta-btn details-cta">LEARN MORE</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2 class="section-title">ABOUT OUR MISSION</h2>
+        <div class="about-content">
+            <div class="about-card">
+                <i class="fas fa-telescope"></i>
+                <h3>Exploration</h3>
+                <p>Discover the cosmic wonders of our solar system through immersive visualization and detailed scientific data.</p>
+            </div>
+            <div class="about-card">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Education</h3>
+                <p>Learn fascinating facts about each planet and deepen your understanding of the universe.</p>
+            </div>
+            <div class="about-card">
+                <i class="fas fa-rocket"></i>
+                <h3>Innovation</h3>
+                <p>Experience cutting-edge web technology and interactive design for astronomical exploration.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 ASTRAL. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
