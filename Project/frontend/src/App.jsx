@@ -17,6 +17,8 @@ function App() {
   }
   );
 
+  const[users, setUsers] = useState([]);  
+
   const ydoc = useMemo(() => new Y.Doc(), []);
 
   const yText = useMemo(() => {
@@ -27,6 +29,13 @@ function App() {
     editorRef.current = editor;
 
     // connect client to server
+    // connect editor and yjs
+    new MonacoBinding(
+      yText,
+      editorRef.current.getModel(),
+      new Set([editorRef.current]),
+      
+    );
    
   };
 
@@ -37,13 +46,12 @@ function App() {
 
     setUsername(value);
     // after refresh, we can get the username from url query params and the data is recoverd
-    window.history.pushState(null, null, `?username=${value}`);
+    window.history.pushState({},"", '?username=' + value);
   };
 
-
-   useEffect(() => {
-    if(username && editorRef.current) {
- const provider = new SocketIOProvider(
+useEffect(() => {
+  if (username ) {
+    const provider = new SocketIOProvider(
       "http://localhost:3000",
       "monaco-demo",
       ydoc,
@@ -52,16 +60,39 @@ function App() {
       }
     );
 
-    // connect editor and yjs
-    new MonacoBinding(
-      yText,
-      editorRef.current.getModel(),
-      new Set([editorRef.current]),
-      provider.awareness
-    );
-    }
-  }, [username, editorRef.current]);
+    provider.awareness.setLocalStateField("user", { username });
 
+    provider.awareness.on("change", () => {
+      const states = Array.from(provider.awareness.getStates().values());
+
+   
+
+      setUsers(
+        states
+          .filter((state) => state.user && state.user.username)
+          .map((state) => state.user)
+      );
+    });
+
+    function handlebeforeUnhold() {
+      provider.awareness.setLocalStateField("user", null);
+    }
+
+    window.addEventListener("beforeunload", handlebeforeUnhold);
+
+    
+
+    return () => {
+      
+      provider.disconnect();
+
+      window.removeEventListener(
+        "beforeunload",
+        handlebeforeUnhold
+      );
+    };
+  }
+}, [username]);
 
   // JOIN SCREEN
   if (!username) {
@@ -87,7 +118,14 @@ function App() {
   return (
     <main className="h-screen w-full bg-gray-950 flex gap-4 p-4">
       <aside className="h-full w-[25%] bg-amber-50 rounded-lg p-4">
-        {username}
+        <h2 className="text-2xl font-bold mb-4">Users</h2>
+        <ul className="flex flex-col gap-2">
+          {users.map((user, index) => (
+            <li key={index} className="p-2 bg-neutral-900 text-white rounded-lg">
+              {user.username}
+            </li>
+          ))}
+        </ul>
       </aside>
 
       <section className="w-[75%] bg-neutral-900 rounded-lg overflow-hidden">

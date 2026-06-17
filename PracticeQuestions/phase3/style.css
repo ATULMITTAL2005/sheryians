@@ -1,0 +1,18 @@
+.users {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.user-card {
+    width: 200px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.user-card img {
+    width: 100%;
+    border-radius: 10px;
+}
