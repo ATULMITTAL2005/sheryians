@@ -265,3 +265,26 @@ body[data-theme="dark"] .slider::after {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* Mobile-specific tweaks: stack controls, enlarge touch targets, improve spacing */
+@media (max-width: 699px) {
+  .task-creator { grid-template-columns: 1fr; }
+  .tasks { grid-template-columns: 1fr; }
+
+  .filters { flex-direction: column; align-items: stretch; }
+  .filters input, .filters select, .filters button { width: 100%; }
+
+  .actions { flex-direction: column; }
+  .actions button { width: 100%; }
+
+  .controls .linkless { padding: 10px 12px; font-size: 15px; border-radius: 10px; width: 100%; text-align: left; }
+
+  .card { padding: 14px; }
+  .title { font-size: 16px; }
+
+  .topbar { padding: 10px 12px; }
+  .container { padding: 0 12px; margin: 12px auto; }
+
+  .theme-toggle { width: 44px; height: 24px; }
+  .slider::after { width: 18px; height: 18px; top: 3px; left: 3px; }
+}
