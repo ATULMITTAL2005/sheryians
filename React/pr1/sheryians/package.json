@@ -2,6 +2,7 @@
   "name": "sheryians",
   "private": true,
   "version": "0.0.0",
+  "author": "Atul Mittal",
   "type": "module",
   "scripts": {
     "dev": "vite",
