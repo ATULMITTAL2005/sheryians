@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Productivity Dashboard</title>
+  <!-- Apply stored theme before CSS loads to avoid flash -->
+  <script>
+    (function(){
+      try{
+        var t = localStorage.getItem('pd-theme');
+        if(t) document.documentElement.setAttribute('data-theme', t);
+      }catch(e){}
+    })();
+  </script>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Productivity Hub</div>
+    <div class="controls">
+      <div id="datetime" class="datetime" aria-live="polite"></div>
+      <button id="themeToggle" class="btn icon" aria-pressed="false" aria-label="Toggle theme">🌓</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="dashboard" class="dashboard" aria-label="Feature dashboard">
+      <h2 class="sr-only">Features</h2>
+      <div class="cards" id="cards">
+        <!-- Feature cards -->
+        <button class="card" data-feature="todo" aria-label="Open Todo List">
+          <div class="card-media"><div class="card-icon">📝</div></div>
+          <div class="card-body"><div class="card-title">Todo</div><div class="card-desc">Quickly capture tasks and mark them done.</div></div>
+        </button>
+        <button class="card" data-feature="planner" aria-label="Open Daily Planner">
+          <div class="card-media"><div class="card-icon">📅</div></div>
+          <div class="card-body"><div class="card-title">Planner</div><div class="card-desc">Plan your day with hourly slots.</div></div>
+        </button>
+        <button class="card" data-feature="goals" aria-label="Open Daily Goals">
+          <div class="card-media"><div class="card-icon">🎯</div></div>
+          <div class="card-body"><div class="card-title">Goals</div><div class="card-desc">Set daily goals and track your progress.</div></div>
+        </button>
+        <button class="card" data-feature="pomodoro" aria-label="Open Pomodoro Timer">
+          <div class="card-media"><div class="card-icon">⏱️</div></div>
+          <div class="card-body"><div class="card-title">Pomodoro</div><div class="card-desc">Focus with time-boxed work sessions.</div></div>
+        </button>
+        <button class="card" data-feature="quotes" aria-label="Open Motivation Quotes">
+          <div class="card-media"><div class="card-icon">💬</div></div>
+          <div class="card-body"><div class="card-title">Motivation</div><div class="card-desc">Get a fresh motivational quote anytime.</div></div>
+        </button>
+        <button class="card" data-feature="weather" aria-label="Open Weather Widget">
+          <div class="card-media"><div class="card-icon">☀️</div></div>
+          <div class="card-body"><div class="card-title">Weather</div><div class="card-desc">Local conditions at a glance.</div></div>
+        </button>
+      </div>
+    </section>
+
+    <!-- Feature views (hidden by default) -->
+    <section id="feature-view" class="feature-view" aria-live="polite"></section>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

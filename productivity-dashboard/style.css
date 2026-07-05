@@ -1,0 +1,113 @@
+:root{
+  /* Dark-mode (default) palette */
+  --bg: #071029; /* page background */
+  --surface: #0f1b2d; /* main surfaces/panels */
+  --card: #132434; /* card background */
+  --accent: #7c5cff; /* primary accent */
+  --accent-2: #00c2a8; /* secondary accent */
+  --text: #e6eef8; /* primary text */
+  --text-secondary: #9fb3c8; /* secondary text */
+  --muted: #7f97ab;
+  --radius: 14px;
+  --gap: 1.25rem;
+  --sh-light: 0 8px 20px rgba(2,6,23,0.45);
+  --bp-sm: 480px;
+  --bp-md: 768px;
+  --content-max: 1100px;
+}
+
+/* Light theme palette */
+[data-theme="light"]{
+  --bg: #f5f8fb;
+  --surface: #ffffff;
+  --card: #ffffff;
+  --accent: #6b46ff;
+  --accent-2: #00a884;
+  --text: #0b1220;
+  --text-secondary: #61707a;
+  --muted: #9aa4ad;
+  --sh-light: 0 10px 30px rgba(11,18,32,0.06);
+}
+
+/* Typography */
+*{box-sizing:border-box}
+html{font-size:16px}
+body{
+  margin:0;min-height:100vh;background:linear-gradient(180deg,var(--bg), color-mix(in srgb,var(--bg) 85%, black 15%));
+  color:var(--text);font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; -webkit-font-smoothing:antialiased;
+}
+.brand{font-family:Poppins, Inter, system-ui; font-weight:700; font-size:1.125rem; color:var(--text)}
+
+/* Topbar */
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:clamp(0.6rem,2vw,1rem);gap:var(--gap)}
+.controls{display:flex;align-items:center;gap:0.5rem}
+.btn{background:transparent;border:0;color:var(--text);padding:0.45rem;border-radius:10px;cursor:pointer}
+.btn:focus-visible{outline:3px solid color-mix(in srgb,var(--accent) 36%, transparent);outline-offset:3px}
+.datetime{font-size:0.9rem;color:var(--text-secondary);min-width:10ch;text-align:right}
+
+.container{padding:clamp(0.8rem,2.5vw,1.5rem);max-width:var(--content-max);margin:0 auto}
+
+/* Dashboard grid */
+.dashboard .cards{display:grid;grid-template-columns:1fr;gap:clamp(0.75rem,2vw,1.25rem)}
+.card{display:flex;align-items:center;gap:1rem;padding:1rem;border-radius:var(--radius);background:linear-gradient(180deg, color-mix(in srgb,var(--card) 92%, transparent), transparent);border:1px solid color-mix(in srgb,var(--card) 65%, transparent);box-shadow:var(--sh-light);cursor:pointer;transform:translateZ(0);transition:transform .26s cubic-bezier(.2,.9,.3,1), box-shadow .26s ease, border-color .18s ease;opacity:0;transform:translateY(10px)}
+.card:focus-visible{box-shadow:0 12px 30px rgba(124,92,255,0.18);border-color:color-mix(in srgb,var(--accent) 36%, transparent)}
+.card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(2,6,23,0.45);border-color: color-mix(in srgb,var(--accent) 22%, transparent)}
+.card-media{width:56px;flex:0 0 56px;height:56px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg, color-mix(in srgb,var(--accent) 18%, transparent), transparent);}
+.card-icon{font-size:1.6rem}
+.card-body{display:flex;flex-direction:column}
+.card-title{font-family:Poppins, Inter;font-weight:600;font-size:1.05rem;color:var(--text)}
+.card-desc{font-size:0.9rem;color:var(--text-secondary);margin-top:0.18rem}
+
+/* subtle entrance animation, staggered via nth-child */
+@keyframes slideUpFade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.cards .card{animation:slideUpFade .42s ease forwards}
+.cards .card:nth-child(1){animation-delay:0.04s}
+.cards .card:nth-child(2){animation-delay:0.08s}
+.cards .card:nth-child(3){animation-delay:0.12s}
+.cards .card:nth-child(4){animation-delay:0.16s}
+.cards .card:nth-child(5){animation-delay:0.20s}
+.cards .card:nth-child(6){animation-delay:0.24s}
+
+/* Feature view panel should use the same surface styling */
+.feature-view{position:fixed;inset:0;display:none;padding:clamp(0.75rem,2vw,1.25rem);backdrop-filter:blur(6px);overflow:auto}
+.feature-panel{max-width:var(--content-max);margin:2.25rem auto;background:var(--surface);padding:1.25rem;border-radius:var(--radius);box-shadow:var(--sh-light);border:1px solid color-mix(in srgb,var(--card) 40%, transparent)}
+.feature-header{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:0.75rem}
+
+/* Forms and controls */
+input[type="text"],textarea,input[type="datetime-local"]{width:100%;padding:0.7rem;border-radius:10px;border:1px solid color-mix(in srgb,var(--card) 45%, transparent);background:transparent;color:var(--text)}
+button.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));border:0;color:white;padding:0.6rem 0.9rem;border-radius:10px;cursor:pointer}
+
+/* Lists */
+.list{display:flex;flex-direction:column;gap:0.5rem}
+.task{display:flex;align-items:center;justify-content:space-between;gap:0.5rem;padding:0.7rem;border-radius:10px;background:linear-gradient(180deg, color-mix(in srgb,var(--card) 96%, transparent), transparent);border:1px solid color-mix(in srgb,var(--card) 50%, transparent)}
+.task .left{display:flex;gap:0.6rem;align-items:center}
+.task .title{min-width:0}
+.task.completed .title{text-decoration:line-through;opacity:0.7}
+.controls-row{display:flex;gap:0.5rem;flex-wrap:wrap}
+
+/* Planner */
+.planner{display:flex;flex-direction:column;gap:0.6rem}
+.slot{display:flex;gap:0.75rem;align-items:flex-start}
+.slot .hour{min-width:4.5rem;text-align:right;color:var(--text-secondary);font-size:0.95rem}
+.slot .note{flex:1}
+.slot.current{box-shadow:0 6px 18px rgba(124,92,255,0.08);border-radius:10px}
+
+/* Responsive grid */
+@media (min-width: 480px){
+  .dashboard .cards{grid-template-columns:repeat(2,1fr)}
+}
+@media (min-width: 768px){
+  .dashboard .cards{grid-template-columns:repeat(3,1fr)}
+}
+
+/* Touch targets and focus */
+button, .card{min-height:48px}
+.card:focus{outline:3px solid color-mix(in srgb,var(--accent) 26%, transparent);outline-offset:4px}
+
+/* Weather & quotes layout tweaks */
+.weather-grid{display:grid;grid-template-columns:1fr auto;gap:0.5rem}
+
+/* Toast / in-page notification fallback */
+.pd-toast-wrap{position:fixed;right:1rem;bottom:1rem;display:flex;flex-direction:column;gap:0.5rem;z-index:9999}
+.pd-toast{background:var(--surface);color:var(--text);padding:0.6rem 0.9rem;border-radius:10px;box-shadow:var(--sh);min-width:220px;border:1px solid rgba(255,255,255,0.04)}
+.pd-toast strong{display:block}
