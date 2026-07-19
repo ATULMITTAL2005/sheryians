@@ -40,8 +40,7 @@ export default function Navbar() {
         <Link className="brand" to="/">
           <Logo className="brand__logo" />
           <span>
-            <strong>Enqueue</strong>
-            <small>Commerce</small>
+            <strong>ENQUEUE</strong>
           </span>
         </Link>
 

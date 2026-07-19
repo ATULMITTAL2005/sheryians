@@ -14,7 +14,7 @@ export default function HomePage() {
         <div className="hero__content">
           <span className="eyebrow">Dark theme commerce system</span>
           <h1>Sharp design, fast discovery, and a polished shopping flow.</h1>
-          <p>Enqueue is a modern React storefront with responsive layouts, reusable components, theme persistence, auth, cart management, and a clean checkout path.</p>
+          <p>ENQUEUE is a modern React storefront with responsive layouts, reusable components, theme persistence, auth, cart management, and a clean checkout path.</p>
           <div className="hero__actions">
             <Button to="/products" variant="primary">Shop now</Button>
             <Button to="/checkout" variant="soft">Go to checkout</Button>

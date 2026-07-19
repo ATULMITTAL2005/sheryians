@@ -1,0 +1,1 @@
+import{j as t,B as a}from"./index-C8o2IegV.js";function c({title:s,description:n,actionLabel:r,actionTo:e}){return t.jsxs("section",{className:"state-card",children:[t.jsx("h3",{children:s}),t.jsx("p",{children:n}),r?t.jsx(a,{to:e,variant:"primary",children:r}):null]})}export{c as E};

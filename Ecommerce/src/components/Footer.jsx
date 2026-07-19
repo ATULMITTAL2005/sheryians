@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="site-footer__inner">
         <div>
-          <strong>Enqueue</strong>
+          <strong>ENQUEUE</strong>
           <p>Minimal dark-theme e-commerce with product discovery, auth, cart, and checkout flows.</p>
         </div>
         <div className="site-footer__links">
