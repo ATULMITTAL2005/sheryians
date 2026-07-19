@@ -1,0 +1,1 @@
+function t(r){return new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:0}).format(r)}function e(r){const n=Math.round(r);return"★★★★★".slice(0,n).padEnd(5,"☆")}export{e as c,t as f};
